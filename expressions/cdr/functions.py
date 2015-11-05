@@ -1,10 +1,7 @@
 from django.db.models import DateField, Func
 
 
-class JustTheDate(Func):
-    """
-    Converts a datetime to a date
-    """
+class Date(Func):
     function = 'DATE'  # MySQL and SQLite
     output_field = DateField()
 
@@ -15,3 +12,4 @@ class JustTheDate(Func):
     def as_oracle(self, compiler, connection):
         self.function = 'TRUNC'
         return super().as_sql(compiler, connection)
+
