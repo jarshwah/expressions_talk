@@ -4,12 +4,12 @@ Examples used in my talk.
 
 ## Getting Started
 
-The examples within are designed to show the differences between Django 1.7 and Django 1.8. 
-It's necessary to leverage virtualenv to easily switch between the examples. These are roughly 
-the steps I used to get up and running (on OSX). This can *only* be run on Python 3, and preferably
-with Python 3.4.
+The examples within are designed to show the differences between django with and
+without Expressions. The examples are within cdr/examples.py. The queries they
+produce are mostly copied to cdr/examples.sql.
 
-We'll be using homebrew, pip3 (which comes with python3), virtualenv, and virtualenvwrapper.
+To setup the environment we'll be using homebrew, pip3 (which comes with python3),
+virtualenv, and virtualenvwrapper.
 
 ```
 git git@github.com:jarshwah/expressions_talk.git
@@ -17,11 +17,7 @@ cd expressions_talk
 brew install python3 pyenv
 pip3 install virtualenv virtualenvwrapper  # unless you already have both installed
 pyenv install 3.4.3
-mkvirtualenv -p `pyenv which python` exp1.7
 mkvirtualenv -p `pyenv which python` exp1.8
-workon exp1.7
-pip install -r requirements/1.7.txt
-deactivate
 workon exp1.8
 pip install -r requirements/1.8.txt
 cd expressions
